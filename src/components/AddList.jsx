@@ -9,7 +9,7 @@ const AddList = ({ addTodo }) => {
     const newTodo = {
       key: Math.random().toString(),
       title: value,
-      count: 0,
+      count: 1,
     };
     addTodo(newTodo);
     setValue("");

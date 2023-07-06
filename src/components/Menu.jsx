@@ -6,9 +6,9 @@ const Menu = ({ todos }) => {
 
   return (
     <>
-      {todos.length > 0 ? (
+      {todos.length > 1 ? (
         <div className="flex justify-between">
-          <button className="flex items-center text-white border border-white p-2 rounded-md hover:bg-white hover:text-slate-900">
+          <button className="flex items-center text-white hover:text-green-500">
             <BiSortAlt2 /> Sort
           </button>
           <button className="flex items-center text-red-400">
@@ -16,7 +16,14 @@ const Menu = ({ todos }) => {
           </button>
         </div>
       ) : (
-        <div></div>
+        <div className="flex justify-between">
+          <button className="flex items-center text-gray-700">
+            <BiSortAlt2 /> Sort
+          </button>
+          <button className="flex items-center text-gray-700">
+            <MdOutlineClear className="mr-2" /> Clear All
+          </button>
+        </div>
       )}
     </>
   );
