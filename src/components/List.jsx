@@ -111,7 +111,7 @@ const List = ({ todos, setTodos }) => {
       </div>
 
       {/* Total data */}
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-2">
         <p className="text-white border border-white rounded-md p-2 w-fit">
           Total Items : {todos.length}
         </p>

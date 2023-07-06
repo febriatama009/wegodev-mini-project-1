@@ -16,7 +16,7 @@ function App() {
       <div className="w-2/6 p-4 gap-y-10">
         <Navigation />
         <AddList addTodo={handleTodos} />
-        <Menu todos={todos} />
+        <Menu todos={todos} setTodos={setTodos} />
         <List todos={todos} setTodos={setTodos} />
       </div>
     </div>
