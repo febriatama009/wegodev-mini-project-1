@@ -12,7 +12,7 @@ const AddList = ({ addTodo }) => {
       count: 0,
     };
     addTodo(newTodo);
-    setValue;
+    setValue("");
   };
 
   const handleInputChange = (e) => {

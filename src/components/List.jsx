@@ -41,10 +41,10 @@ const List = ({ todos, setTodos }) => {
     <div>
       {todos.length > 0 ? (
         <div>
-          {todos.map((todo) => (
+          {todos.map((todo, index) => (
             <div
               className="text-white flex items-center justify-between"
-              key={todo.id}
+              key={index}
             >
               <div className="flex items-center">
                 <button onClick={() => handleDelete(todo.key)}>
@@ -61,15 +61,28 @@ const List = ({ todos, setTodos }) => {
                 </div>
                 <div>
                   {/* Add and remove */}
-                  <button
-                    className="m-4"
-                    onClick={() => handleDecrement(todo.key)}
-                  >
-                    <AiOutlineMinusCircle
-                      size={24}
-                      className="hover:text-red-500"
-                    />
-                  </button>
+                  {todo.count < 1 ? (
+                    <button
+                      className="m-4"
+                      onClick={() => handleDecrement(todo.key)}
+                      disabled
+                    >
+                      <AiOutlineMinusCircle
+                        size={24}
+                        className="text-gray-400"
+                      />
+                    </button>
+                  ) : (
+                    <button
+                      className="m-4"
+                      onClick={() => handleDecrement(todo.key)}
+                    >
+                      <AiOutlineMinusCircle
+                        size={24}
+                        className="hover:text-red-500"
+                      />
+                    </button>
+                  )}
                   <button onClick={() => handleIncrement(todo.key)}>
                     <IoMdAddCircle size={24} className="hover:text-green-500" />
                   </button>
